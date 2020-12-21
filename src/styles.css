@@ -1,4 +1,107 @@
-p {
+* {
 	font-family: Graphik;
 	font-size: 30px;
+}
+
+.degrees {
+	font-size: 80px;
+	display: inline-block;
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.icon {
+	display: inline;
+	position: relative;
+	float: right;
+}
+
+.display {
+	margin: 0 auto;
+	padding: 20px;
+	width: 350px;
+	height: 400px;
+
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+
+	position: absolute;
+}
+
+.searchBox {
+	background: darkgray;
+	width: 100%;
+	height: auto;
+	margin-top: 10px;
+
+	display: block;
+	text-align: center;
+
+	padding: 20px;
+}
+
+.climateArea {
+	padding: 30px;
+	background: lightgray;
+	display: inline-block;
+}
+
+h1 {
+	margin-top: 0;
+}
+
+.extras span {
+	font-weight: bold;
+	font-size: 20px;
+	color: black;
+	margin-top: 100px;
+	position: relative;
+}
+
+.extras {
+	font-size: 18px;
+	color: gray;
+}
+
+.container {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+label {
+	font-size: 20px;
+	display: block;
+}
+
+input {
+	height: 30px;
+	width: 150px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+button {
+	width: 48%;
+	border: 1px solid gray;
+	padding: 0;
+	font-size: 12px;
+	height: 30px;
+}
+
+form {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+
+	height: 100px;
+
+	position: relative;
+
+	margin-bottom: 0;
 }
