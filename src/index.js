@@ -1,27 +1,31 @@
 import Model from "./model.js";
+import View from "./view.js";
 import "./styles.css";
 
 (async function main() {
 	const model = Model();
-
-	let weatherData = await model.getData();
-	console.log(weatherData);
+	const view = View();
+	console.log(view);
+	console.log(model);
 
 	//Query Selectors
-	let dataText = document.querySelector(".dataText p");
+	let input = document.querySelector("input[name='city']");
+	let button = document.querySelector("button");
 
-	//Create P
+	//Create Elements
+	let currentWeather = document.createElement("div");
 	let p = document.createElement("p");
 	let icon = document.createElement("img");
 
-	//HTML
-	icon.src = weatherData.icon;
+	//Functions
 
-	p.innerHTML = weatherData.temp;
-	p.appendChild(icon);
+	let getInput = async function () {
+		let city = input.value;
+		let climate = await model.getData(city);
+		console.log(climate);
+		view.applyData(climate);
+	};
 
-	p.innerHTML += `<br><br>Also, humidity is ${weatherData.humidity}, feels like ${weatherData.feels}, and wind is ${weatherData.wind}`;
-
-	//Append
-	dataText.appendChild(p);
+	//Event
+	button.addEventListener("click", getInput);
 })();

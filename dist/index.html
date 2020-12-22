@@ -3,7 +3,6 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
-		<script src="main.js"></script>
 		<link type="text/css" href="style.css" />
 	</head>
 	<body>
@@ -19,19 +18,21 @@
 							class="src"
 						/>
 					</div>
-					<div class="extras feels">Feels like: <span>24°C</span></div>
-					<div class="extras humidity">Humidity: <span>46%</span></div>
-					<div class="extras wind">Wind: <span>7.0 m/s</span></div>
+					<div class="extras">Feels like: <span class="feels">24°C</span></div>
+					<div class="extras">Humidity: <span class="humidity">46%</span></div>
+					<div class="extras">Wind: <span class="wind">7.0 m/s</span></div>
 				</div>
 
 				<div class="searchBox">
-					<form action="">
+					<form action="" class="main">
 						<label for="city">Enter City</label>
-						<input type="text" />
-						<button>Submit</button>
+						<input name="city" type="text" />
+						<button type="button" class="submit">Submit</button>
 					</form>
 				</div>
 			</div>
 		</div>
+
+		<script src="main.js"></script>
 	</body>
 </html>

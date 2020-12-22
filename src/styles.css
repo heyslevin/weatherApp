@@ -46,6 +46,7 @@
 	padding: 30px;
 	background: lightgray;
 	display: inline-block;
+	width: 100%;
 }
 
 h1 {
@@ -84,6 +85,8 @@ input {
 	width: 150px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	font-size: 12px;
+	text-align: center;
 }
 
 button {
