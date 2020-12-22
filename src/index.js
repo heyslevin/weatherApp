@@ -21,9 +21,13 @@ import "./styles.css";
 
 	let getInput = async function () {
 		let city = input.value;
-		let climate = await model.getData(city);
-		console.log(climate);
-		view.applyData(climate);
+		let climate = await model.getData(city).catch(model.handleError);
+
+		console.log("climate is " + climate);
+		if (typeof climate !== "undefined") {
+			console.log("doing it");
+			view.applyData(climate);
+		}
 	};
 
 	//Event

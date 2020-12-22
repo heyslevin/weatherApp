@@ -1,10 +1,25 @@
 var model = function () {
+	//Error Handling
+
+	let handleError = function (err) {
+		alert("City not Found");
+		return;
+	};
+
 	var getData = async function (city = "Monterrey") {
 		const apiKey = "1bb0d8b4f3762be3fe8f5ccfeb29326b";
 		let apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
-		const response = await fetch(apiLink, { mode: "cors" });
-		const data = await response.json();
+		let data;
+
+		const response = await fetch(apiLink, { mode: "cors" }).catch(handleError);
+
+		if (!response.ok) {
+			alert("City not found :(");
+			return;
+		}
+
+		data = await response.json().catch(handleError);
 
 		let cleanData = {
 			city: data.name,
@@ -21,6 +36,7 @@ var model = function () {
 
 	return {
 		getData,
+		handleError,
 	};
 };
 
